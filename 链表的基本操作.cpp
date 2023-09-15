@@ -89,6 +89,10 @@ void deldata(int data){
             }
 
             delete p;
+            break;
         }
+
+        pre = p;
+        p = p -> next;
     }
 }   
