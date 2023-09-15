@@ -58,6 +58,20 @@ void insert(int n, int x){
     }
     else{
         int i;
-        Node *p
+        Node *p = head;
+        for(i = 1; i <= n - 2; i++){
+            p = p -> next;
+            if(p == NULL){
+                break;
+            }
+        }
+
+        if(p == NULL){
+            cout << "n有误" << endl;
+        }
+        else{
+            d -> next = p -> next;
+            p -> next = d;
+        }
     }
 }
