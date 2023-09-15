@@ -75,3 +75,20 @@ void insert(int n, int x){
         }
     }
 }
+
+//删除链表中第一个出现的data
+void deldata(int data){
+    Node *p = head, *pre = NULL;
+    while(p != NULL){
+        if(data == p -> data){
+            if(p == head){
+                head = p -> next;
+            }
+            else{
+                pre -> next = p -> next;
+            }
+
+            delete p;
+        }
+    }
+}   
