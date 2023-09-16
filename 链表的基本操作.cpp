@@ -128,3 +128,46 @@ void delpos(int n){
         }
     }
 }
+
+//输出链表
+void display(){
+    Node *p = head;
+    while(p != NULL){
+        cout << p -> data << " ";
+        p = p -> next;
+    }
+
+    cout << endl;
+}
+
+int main(){
+    int order, x, p;
+    cout << "输入指令:";
+    while(1 == 1){
+        cout << "1.追加 2.插入 3.删除值 4.删除位置 5.显示!" << endl;
+        cin >> order;
+        if(order == 1){
+            cin >> x;
+            add(x);
+            display();
+        }
+        else if(order == 2){
+            cin >> p >> x;
+            insert(p, x);
+            display();
+        }
+        else if(order == 3){
+            cin >> x;
+            deldata(x);
+            display();
+        }
+        else if(order == 4){
+            cin >> x;
+            delpos(x);
+            display();
+        }
+        else if(order == 5){
+            display();
+        }
+    }
+}
