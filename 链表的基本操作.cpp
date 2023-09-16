@@ -95,4 +95,36 @@ void deldata(int data){
         pre = p;
         p = p -> next;
     }
-}   
+}
+
+//删除某个位置的元素
+void delpos(int n){
+    Node *p = head, *t;
+
+    //如果要删除头节点
+    if(n == 1){
+        if(head != NULL){
+            head = head -> next;
+            delete p;
+        }
+        else{
+            cout << "链表空" << endl;
+        }
+    }
+    else{
+        int i;
+        for(i = 1; i <= n - 2; i++){
+            p = p -> next;
+            if(p == NULL) break;
+        }
+
+        if(p == NULL || p -> next == NULL){
+            cout << "n的值有误!" << endl;
+        }
+        else{
+            t = p -> next;
+            p -> next = t -> next;
+            delete t;
+        }
+    }
+}
